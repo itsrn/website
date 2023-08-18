@@ -8,7 +8,7 @@ export default function Home() {
       style={{ backgroundImage: 'url("./bg.jpeg")', backgroundSize: "cover" }}
     >
       <h1 className="lg:max-w-3xl mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-        Hey, I&lsquo;m{" "}
+        Hey, I&rsquo;m{" "}
         <mark className="px-2 text-white bg-violet-500 bg-noise rounded-lg">
           Ron
         </mark>
@@ -30,9 +30,8 @@ export default function Home() {
             <mark className="px-2 text-white bg-violet-500 bg-noise rounded-lg">
               Ron Nuss
             </mark>
-            , a {new Date().getFullYear() - 2007} years old back-end developer
-            from Israel. I am developing free tools to make life simpler and
-            easier. I am also a{" "}
+            , a 15 years old back-end developer
+            from Israel. I am a{" "}
             <a
               href="https://www.iaf.org.il/9279-52183-he/IAF.aspx"
               className="underline decoration-wavy decoration-violet-400"
