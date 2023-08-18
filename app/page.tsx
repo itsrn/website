@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-between p-20 md:bg-cover md:bg-center"
-      style={{ backgroundImage: 'url("/bg.jpeg")', backgroundSize: "cover" }}
+      style={{ backgroundImage: 'url("./bg.jpeg")', backgroundSize: "cover" }}
     >
       <h1 className="lg:max-w-3xl mb-4 text-5xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
         Hey, I&lsquo;m{" "}
