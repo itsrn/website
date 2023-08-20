@@ -6,7 +6,7 @@ const archivo = Archivo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ron Nuss",
-  description: "I'm Ron, a back-end developer from Israel",
+  description: "I'm Ron, a back-end developer from Israel.",
   icons: ["https://avatars.githubusercontent.com/u/132187043?v=4"],
 };
 
