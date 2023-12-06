@@ -48,7 +48,7 @@ export default function Home() {
             >
               Ron Nuss
             </mark>
-            , a 15 years old back-end developer from Israel. I am a{" "}
+            , a 16 years old back-end developer from Israel. I am a{" "}
             <a
               href="https://www.iaf.org.il/9279-52183-he/IAF.aspx"
               className={"underline decoration-wavy decoration-violet-400 " + azeret_mono.className}
