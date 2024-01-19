@@ -37,7 +37,7 @@ export default function Home() {
             <img
               src="https://avatars.githubusercontent.com/u/132187043?v=4"
               alt="ron"
-              className="overflow-hidden w-1/3 md:w-1/5 flex-[0_0_auto] rounded-full"
+              className="overflow-hidden w-1/2 md:w-1/5 flex-[0_0_auto] rounded-full"
             />
             <h1 className="md:text-3xl text-xl">
               <span className="flex flex-row items-center">
