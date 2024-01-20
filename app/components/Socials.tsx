@@ -21,17 +21,19 @@ const icons = [
 
 export function Socials() {
   return (
-    <div className="flex flex-row space-x-2">
+    <div className="flex flex-row -space-x-3 md:space-x-2">
       {icons.map((icon, key) => (
         <div
           key={key}
           className="text-[#8a8a93] transition-all duration-300 ease-[ease-out] hover:text-white"
         >
           <a href={icon.link}>
-            <icon.icon size={icon.size} />
+            <icon.icon size={icon.size} className="h-2/3 md:h-full" />
           </a>
         </div>
       ))}
     </div>
   );
 }
+
+export default icons;
