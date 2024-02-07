@@ -1,7 +1,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-.flag-il {
-  background-image: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAClUExURUdwTKampX5+gXl5eby7urCwsI2MjH6Bj8bFw8/NygwnZ3t7e8XFxXd3d8TExMbGxsbGxjpLd6GipP///yZUsd3d3NnZ2O/u7PLy8uLi4QUvjOfn5xxLrNXV1QY0lfj5+RI+mQ9CqRhFo/j39Pz8/AIjhJKkzgY2oKOjoz9ktsXR6d7l8+vo3nmSyFFyvqi53WSCxY6OkGN3rjxWn7Szrra8zAQga7v0iQYAAAATdFJOUwCi+lD+I64K/v6o2NiPpnFIqPgOhhgBAAAEh0lEQVRYw+2X2VLjQAxFBxKIPSEByvsWtxdst/ds8/+fNpLaW4JDMTzNQ24KqKLg5EpW91V+/brrrrv+S62eRq1WP0I8vb29vm63Ly8Sarlcvmy3r29Pq39jvAJAlj0dBN88z5NlmYAv29en0e7qq0rewAUwNMsxjAhkOI6l6bqmaSX88KTltv/31cPDnENkgBEZ3l6zDDOKo6LIm6Sq+fEYsvB4PB6Ss1da0sMIOp1OVC/2D7vZN0OG93WMyI/9oklarrpBmqY7kG1/CLFjlU1BkkztW76QoHTsh/BhFjkygiBwSWEYMkYs+wO+dvbH+wB6f1zqUC82EOVRP7AdUEpVgw9gqEIdiBEIOYzZvwfQ7z8fVK9mlQbINBwNm9FyKAUg6qjOUTrhXIFEvUd+OBzqA1fDFDUaGUFhmo4tmnEk3gCr3tm7XRqG2A71ggMVYqNUXh9Q8NQYoHYzIOggYyljIYlIvQ8E1FXS5EVhRjRMRllaupRUnH1cgXYCBBw2YFxECEZu+goojiOTJlKDYdS10jC9/ftlj9ARQ0dkB79hJSoHRkEMxPg+cASIDgqMiCWPc/ScZQdmdzBQusNG87pqiOEXggJ2ZkDecgqSS00+J9BCznldt+ACEH4sfCQ1UjpLkWlegvQLkOTpYoYMPJgxyQcSSIl5mnelKX4Psgik69YnENKhYMcRNNM0IwIpSqO2vIjhsPnC0aQ0/VNpkkf3goUkZ+BQj01oVVpzNa0+lzbnCB+mNuGQoQIPLM530LZugQ+/d9SXpjk3HCHIGQwlqcuDGqYQqquUOUfaLUcXpcWmW+cudrpJeaHMObKsLxyJ0ny01LhqS4+L1/68I+d2j5yhRzBIVUpOcjdIfugo6kEJGaqSoPieI2/28edq4uZ+Xrm1mtZTR19M9rUj6lHLc5fDRamqddLE/zhHY4+UHG5amKEkaMRZu+6Rd3uyhSNDPDUlaeH8wyFuFWU8tJelOV/OUf/U6PznwXBoL64R79ZAzvWIro+2HgzRjdTdtCUF9xeg6RzR8S8KZZAPUdckpPPZw6vndmnGOEgC1FVVUNSpIevjyGaQhno5vWpPcn8fTY8/ZH7cu4DVQcRRGIRhynZT2MMksiUoWZvWBtckMfJueeiz8iL7RT5exJFNG4rYfyIsKjILwRCheBXZA+hz0gqTcOuT2lqsMMF1ZJOjEWPbbDay+7zdYRyFlJDqVWjjSiCWERH+c9kvCH1Cul3WjqENB45jUjVnUpJUhyPDt36fzf4usofsJwQEbps0sLzBHOoyrmQn+IJtTD5XxwtHf0TIMkEiDMY2NpoC13JKzZOXpyzbgx477ffZSZay53GO9ofjkNgpJTZuR6GKDMcoLTCBiMfH9fp5s1mQNpvNek2wyUDuT9ISS4ZtFf1AL7AVcAIgyYUNJCwWYteHhXX1i/75abF4Xu9HRxsAZyeqWZbFoYaFUuoq6RD0l3PL/GIx/Hq12Kyx5CzLTqSMCFDJyPjW5xR8LbBkLPoRO7FeUytWP//kAwbwtbpRx7et3XXXXf+7/gKYdxrs6fgv8wAAAABJRU5ErkJggg==";
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+ 
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+ 
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+ 
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+ 
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+ 
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+ 
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+ 
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+ 
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+ 
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+ 
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+ 
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+ 
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }

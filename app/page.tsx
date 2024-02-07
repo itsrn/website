@@ -7,30 +7,72 @@ import { ButtonGradient } from "./components/ButtonGradient";
 import SocialLinks, { Socials } from "./components/Socials";
 import { FaArrowRight } from "react-icons/fa6";
 import { Footer } from "./components/Footer";
+import React, { useEffect, useState } from "react";
+import { Heebo } from "next/font/google";
+const hebrewFont = Heebo({
+  subsets: ["hebrew"],
+});
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
 
 export default function Home() {
+  const [isRedirectedFromShortLink, setIsRedirectedFromShortLink] =
+    useState(false);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const referrer: string = document.referrer;
+      setIsRedirectedFromShortLink(referrer === "https://did.li/BITpayco-il");
+    }
+  }, []);
+
   return (
     <>
+      <AlertDialog open={isRedirectedFromShortLink} onOpenChange={setIsRedirectedFromShortLink}>
+        <AlertDialogContent className={hebrewFont.className + "  "} dir="rtl">
+          <AlertDialogHeader>
+            <AlertDialogTitle className="text-right" dir="rtl">
+              שלום!
+            </AlertDialogTitle>
+            <AlertDialogDescription className=" text-right" dir="rtl">
+              אתם הגעתם לכאן דרך קישור מקוצר שהוביל לאתר פישינג. למזלכם, הספקתי
+              לדווח על הקישור המקוצר ולקחת אותו ככה שיוביל לאתר שלי (אל דאגה, כאן אתם
+              בטוחים). מוזמנים לצאת מהאתר ולהמשיך בשגרת היום שלכם. תשמרו על
+              עצמכם.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>בסדר</AlertDialogCancel>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
       <main className="relative flex min-h-screen flex-col items-center md:p-20 p-0 mt-8 md:pt-10">
         {/* the "shadow" at the top of the screen */}
         <div className="pointer-events-none fixed left-0 top-0 z-50 h-12 w-full to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] bg-neutral-900"></div>
 
-        {/* the badge */}
-        <AnimatedBadge>
+        {/* the badge. will be used in the future (probably) */}
+        {/*
+          <AnimatedBadge>
           <div className="md:text-xl flex flex-row items-center justify-center">
             Introducing: My new website{" "}
-            {/*
             <div
               data-orientation="vertical"
               role="none"
               className="shrink-0 bg-white opacity-70 w-[1px] mx-2 h-4"
             ></div>{" "}
             Read more <FaArrowRight className="ml-1" />
-
-            //will be used in the future
-            */}
           </div>
         </AnimatedBadge>
+        */}
 
         {/* the bento */}
         <div className="md:grid gap-x-2 gap-y-2 grid-cols-[1fr_0.7fr] grid-rows-[auto] my-2 md:mt-10 mt-3 w-2/3">
@@ -86,12 +128,20 @@ export default function Home() {
             solutions. I&#39;m currently working on{" "}
             <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#b2a8fd] via-[#8678f9] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent">
               Bubblez
-            </span>
-            {" "} - a simple and easy website builder.{" "}
+            </span>{" "}
+            - a simple and easy website builder.{" "}
             <span className="text-[#8a8a93]">
               {" "}
-              <span className="text-[#57578f]">Bubblez</span> is still under development, and future updates about it will
-              be in my <a className="text-[#4d4f53]" href={SocialLinks[1].link}>X (Twitter)</a> and <a className="text-[#57628f]" href={SocialLinks[2].link}>LinkedIn</a>.
+              <span className="text-[#57578f]">Bubblez</span> is still under
+              development, and future updates about it will be in my{" "}
+              <a className="text-[#4d4f53]" href={SocialLinks[1].link}>
+                X (Twitter)
+              </a>{" "}
+              and{" "}
+              <a className="text-[#57628f]" href={SocialLinks[2].link}>
+                LinkedIn
+              </a>
+              .
             </span>
           </h3>
         </div>
