@@ -1,15 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import localFonts from "next/font/local";
+import { Playfair_Display } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Ron Nuss",
-  description: "I'm Ron, 16 years old, full-stack developer.",
+  description: "I'm Ron, a Back-End Developer that turns ideas into projects.",
   icons: ["https://avatars.githubusercontent.com/u/132187043?v=4"],
 };
 
-const websiteFont = localFonts({
-  src: "./Font.ttf",
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
 });
 
 export default function RootLayout({
@@ -19,8 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={"min-h-screen bg-neutral-950 overflow-x-hidden " + websiteFont.className}>
-        <div className="absolute top-0 z-[-2] min-h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      <body
+        className={
+          "min-h-screen fixed bg-[#F0F2AE] text-[#0D0D0D] " +
+          playfairDisplay.className
+        }
+      >
         {children}
       </body>
     </html>
