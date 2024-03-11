@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function calcAge() {
-  const birthdate = new Date("2007-5-12");
+  const birthdate = new Date("2007-12-05T00:00:00");
   const today = new Date();
   const age =
     today.getFullYear() -
