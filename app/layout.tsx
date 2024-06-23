@@ -5,7 +5,7 @@ import { Playfair_Display } from "next/font/google";
 export const metadata: Metadata = {
   title: "Ron Nuss",
   description: "I'm Ron, a Back-End Developer that turns ideas into projects.",
-  icons: ["https://avatars.githubusercontent.com/u/132187043?v=4"],
+  icons: ["./favicon.ico"],
 };
 
 const playfairDisplay = Playfair_Display({
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={
-          "min-h-screen fixed bg-[#F0F2AE] text-[#0D0D0D] " +
+          "min-h-screen bg-[#F2F2F2] text-[#403F3E] " +
           playfairDisplay.className
         }
       >

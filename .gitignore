@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+bun.lockb 
+# ^ now with bun support
 
 # testing
 /coverage

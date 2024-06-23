@@ -74,3 +74,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+::-moz-selection {
+  color: #F2F2F2;
+  background: #403F3E;
+}
+
+::selection {
+  color: #F2F2F2;
+  background: #403F3E;
+}

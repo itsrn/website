@@ -1,115 +1,203 @@
 "use client";
-import { ContactIcon } from "../components/ui/Icons";
-// import { FaArrowRight } from "react-icons/fa6";
-// in a future update of the website, i'll add and use this icon
-import { Footer } from "../components/ui/Footer";
 import React, { useEffect, useState } from "react";
-import { Inter } from "next/font/google";
-import { calcAge, cn, projects } from "@/lib/utils";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import localFont from "next/font/local";
+import { calcAge, cn, projects, hebrewTranslatedProjects } from "@/lib/utils";
+import { isHebrewSystem } from "@/lib/utils";
+import { HDate, gematriya } from "@hebcal/core";
+import { FaTools, FaGithub } from "react-icons/fa";
+import ToolTip from "@/components/ui/tooltip";
 
-const interFont = Inter({
-  subsets: ["latin"],
+const SimplerPro = localFont({
+  src: [
+    {
+      path: "../public/SimplerPro_V3-Regular.otf",
+      weight: "400",
+    },
+    {
+      path: "../public/SimplerPro_V3-Bold.otf",
+      weight: "700",
+    },
+  ],
 });
 
 export default function Home() {
+  const [isInHebrewSystem, SetIsInHebrewSystem] = useState<boolean>();
+  const hebrewDate = new HDate(new Date());
+
+  useEffect(() => {
+    if (navigator) {
+      SetIsInHebrewSystem(isHebrewSystem());
+    }
+  }, []);
+
   return (
     <>
-      <main className="flex min-h-screen flex-col md:p-20 mt-8 container md:pt-10">
-        <h1 className="md:text-6xl break-before-all md:max-w-xl text-5xl text-left italic">
-          I&lsquo;m Ron, a Back-End Developer.
+      <main
+        className="flex min-h-screen flex-col md:p-20 mt-8 container md:pt-10"
+        dir={isInHebrewSystem ? "rtl" : "ltr"}
+      >
+        <h1
+          className={`${
+            isInHebrewSystem ? SimplerPro.className : ""
+          } md:text-6xl w-full font-bold break-before-all md:w-full text-5xl text-center italic `}
+        >
+          {isInHebrewSystem
+            ? "אני רון, מתכנת בק-אנד."
+            : "I'm Ron, a Back-End Developer."}
         </h1>
         <h3
           className={cn(
-            interFont.className,
-            "text-[#0D0D0D] md:text-lg text-base mt-3 max-w-2xl bg-[#F2F0CE] p-3 rounded-xl md:px-5"
+            SimplerPro.className,
+            "md:text-lg text-base mt-3 w-full text-center p-3 rounded-xl md:px-5"
           )}
         >
-          My name is Ron Nuss, a {calcAge()} years old back-end developer from
-          Israel, who turns <span className="text-[#03A688]">imaginations</span>{" "}
-          into <span className="text-[#F25C78]">projects</span>.
+          {isInHebrewSystem
+            ? `קוראים לי רון נוס, ואני מתכנת בק-אנד בן ${calcAge()}, שפותר בעיות יום-יומיות בעזרת קוד.`
+            : `My name is Ron Nuss, a ${calcAge()} years old back-end developer from
+          Israel, who solves every-day problems with code.`}
         </h3>
-        <div className="container w-full flex flex-col gap-3 md:mt-10 mt-5">
-          <h3 className="text-[#0D0D0D] md:text-4xl text-3xl">Projects</h3>
-          {/* looking for the projects array? it's in the "utils.ts" file, under the "lib" folder. */}
-          {projects.map((project, index) =>
-            project.isInDevelopment ? (
-              <>
-                <TooltipProvider>
-                  <Tooltip delayDuration={0}>
-                    <TooltipTrigger className="cursor-default">
-                      <div
-                        key={index}
-                        className={
-                          "text-[#0D0D0D] flex flex-col gap-0 p-5 rounded-xl bg-[#F2F0CE] opacity-60"
-                        }
-                      >
-                        <h2 className="text-2xl text-left">
-                          {project.name}{" "}
-                          <span
-                            className={cn(
-                              interFont.className,
-                              "text-xs opacity-70"
-                            )}
-                          >
-                            ({project.year})
-                          </span>
-                        </h2>
-                        <h4
-                          className={cn(
-                            "text-base text-left",
-                            interFont.className
-                          )}
-                        >
-                          {project.description}
-                        </h4>
-                      </div>
-                    </TooltipTrigger>
-                    <TooltipContent
-                      className={cn(
-                        interFont.className,
-                        "max-w-md text-center"
-                      )}
-                    >
-                      This project is still under development!
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </>
-            ) : (
+        <div className="container w-full flex flex-col md:mt-10 mt-5">
+          <h3
+            className={` ${
+              isInHebrewSystem ? SimplerPro.className : ""
+            } md:text-4xl font-bold text-3xl`}
+          >
+            {isInHebrewSystem ? "הפרויקטים שלי" : "Projects"}
+          </h3>
+          <h5
+            className={`${SimplerPro.className} md:text-lg text-base italic mb-4`}
+          >
+            {isInHebrewSystem
+              ? `הנה מספר פרויקטים שעבדתי עליהם או שעדיין בעבודה. חלקם גם זמינים בקוד-פתוח.`
+              : `Here are some of my projects that I worked on or still in development. Some of them are open-source.`}
+          </h5>
+          <div className="flex flex-col gap-2 max-w-[37.5rem]">
+            {projects.map((project, index) => (
               <>
                 <a key={index} href={project.link}>
                   <div
                     className={
-                      "text-[#0D0D0D] flex flex-col gap-0 p-5 rounded-xl bg-[#F2F0CE]"
+                      "flex flex-col gap-0 p-5 rounded-xl border-2 border-[#403F3E]"
                     }
                   >
-                    <h2 className="text-2xl">
-                      {project.name}{" "}
+                    <div className="flex flex-row items-center gap-2">
+                      {project.isInDevelopment && (
+                        <div>
+                          <ToolTip
+                            className={
+                              SimplerPro.className + " md:block hidden"
+                            }
+                            tooltip={
+                              isInHebrewSystem
+                                ? "פרויקט זה עדיין בבנייה"
+                                : "This project is still under development"
+                            }
+                          >
+                            <FaTools className="fill-[#403F3E]" />
+                          </ToolTip>
+                        </div>
+                      )}
+                      {project.isOpenSource && (
+                        <div>
+                          <ToolTip
+                            className={
+                              SimplerPro.className + " md:block hidden"
+                            }
+                            tooltip={
+                              isInHebrewSystem
+                                ? "פרויקט זה זמין בקוד פתוח"
+                                : "This project is open source"
+                            }
+                          >
+                            <a href={project.githubLink}>
+                              <FaGithub className="fill-[#403F3E]" />
+                            </a>
+                          </ToolTip>
+                        </div>
+                      )}
+                      <h2
+                        className={`${
+                          isInHebrewSystem ? SimplerPro.className : ""
+                        } text-2xl flex flex-row`}
+                        dir="rtl"
+                      >
+                        {isInHebrewSystem
+                          ? hebrewTranslatedProjects[index].name
+                          : project.name}
+                      </h2>
                       <span
                         className={cn(
-                          interFont.className,
+                          SimplerPro.className,
                           "text-xs opacity-70"
                         )}
                       >
                         ({project.year})
                       </span>
-                    </h2>
-                    <h4 className={cn("text-base", interFont.className)}>
-                      {project.description}
+                    </div>
+                    <h4 className={cn("text-base", SimplerPro.className)}>
+                      {isInHebrewSystem
+                        ? hebrewTranslatedProjects[index].description
+                        : project.description}
                     </h4>
+                    {project.isInDevelopment && (
+                      <h4
+                        className={cn(
+                          "text-base bg-[#403F3E] md:hidden block rounded-sm text-[#F2F2F2] md:w-1/3 w-full text-center p-1.5",
+                          SimplerPro.className
+                        )}
+                      >
+                        {isInHebrewSystem
+                          ? "פרויקט זה עדיין בבנייה"
+                          : "This project is still under development"}
+                      </h4>
+                    )}
+                    {project.isOpenSource && (
+                      <a href={project.githubLink}>
+                        <h4
+                          className={cn(
+                            "text-base bg-[#403F3E] md:hidden block rounded-sm text-[#F2F2F2] md:w-1/3 w-full text-center p-1.5",
+                            SimplerPro.className
+                          )}
+                        >
+                          {isInHebrewSystem
+                            ? "פרויקט זה זמין בקוד פתוח"
+                            : "This project is open source"}
+                        </h4>
+                      </a>
+                    )}
                   </div>
                 </a>
               </>
-            )
-          )}
+            ))}
+          </div>
         </div>
-        <Footer />
+        <footer
+          className={cn(
+            "flex text-sm flex-row px-10 tracking-wide mt-0 md:text-left text-center text-[#8a8a93] max-h-full py-4 rounded-tl-3xl rounded-tr-3xl bottom-0 left-0 right-0",
+            SimplerPro.className
+          )}
+        >
+          <span>
+            &copy;{" "}
+            {isInHebrewSystem ? "נוצר על ידי רון נוס," : "Created by Ron Nuss,"}{" "}
+            {"  "}
+            <span className="mx-[0.1px]">
+              <a
+                href={
+                  isInHebrewSystem
+                    ? "#"
+                    : "https://en.wikipedia.org/wiki/Hebrew_calendar"
+                }
+                className={isInHebrewSystem ? "cursor-text" : "cursor-help"}
+              >
+                {isInHebrewSystem
+                  ? gematriya(hebrewDate.getFullYear())
+                  : hebrewDate.getFullYear()}
+              </a>
+            </span>
+            {"  "}({new Date().getFullYear()}).
+          </span>
+        </footer>
       </main>
     </>
   );
