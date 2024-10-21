@@ -43,6 +43,14 @@ export const projects = [
     isOpenSource: false,
   },
   {
+    name: "Mila Be'Mila",
+    year: 2024,
+    link: "#",
+    isInDevelopment: true,
+    description: "Guess the word by using other words (similar to Wordle)",
+    isOpenSource: false,
+  },
+  {
     name: "TziburTV",
     year: 2024,
     link: "https://tziburtv.vercel.app",
@@ -66,6 +74,10 @@ export const hebrewTranslatedProjects = [
   {
     name: "המרכז",
     description: "אתר אחד - לכל החדשות.",
+  },
+  {
+    name: "מילה במילה",
+    description: "משחק קטן שבו אתם צריכים לנחש מילה מסוימת ע\"פ קטגוריה ובעזרת מילים אחרות.",
   },
   {
     name: "ציבורTV",

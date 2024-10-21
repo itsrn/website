@@ -52,9 +52,9 @@ export default function Home() {
           )}
         >
           {isInHebrewSystem
-            ? `קוראים לי רון נוס, ואני מתכנת בק-אנד בן ${calcAge()}, שפותר בעיות יום-יומיות בעזרת קוד.`
+            ? `קוראים לי רון נוס, ואני מתכנת בק-אנד בן ${calcAge()}, שמפתח אתרים ותכנות`
             : `My name is Ron Nuss, a ${calcAge()} years old back-end developer from
-          Israel, who solves every-day problems with code.`}
+          Israel, that develops websites and programs.`}
         </h3>
         <div className="container w-full flex flex-col md:mt-10 mt-5">
           <h3

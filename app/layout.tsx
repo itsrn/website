@@ -4,7 +4,7 @@ import { Playfair_Display } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Ron Nuss",
-  description: "I'm Ron, a Back-End Developer that turns ideas into projects.",
+  description: "I'm Ron, a Back-End Developer.",
   icons: ["./favicon.ico"],
 };
 
