@@ -4,21 +4,20 @@ import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Ron Nuss",
-  description: "I'm Ron Nuss, a Back-End Developer from Israel.",
-  icons: ["./favicon.ico"],
+  title: "ron",
+  description: "i'm ron, a back-end developer from Israel.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://ron.is-a.dev",
-    title: "Ron Nuss",
-    description: "Back-End Developer.",
+    title: "ron",
+    description: "a back-end developer.",
     images: [
       {
         url: "https://avatars.githubusercontent.com/u/132187043?v=10",
         width: 1200,
         height: 630,
-        alt: "Ron Nuss",
+        alt: "Ron",
       },
     ],
   },
