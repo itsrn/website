@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ron // ~</title>
+    <meta name="description"
+        content="Personal site — backend development, reverse engineering, and tinkering with encryption.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23E95420%22/></svg>">
+</head>
+
+<body>
+
+    <div class="crt-line" aria-hidden="true"></div>
+
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <span class="brand"><span class="dot"></span>ron<span class="at">@</span>web<span
+                    class="colon">:</span><span class="path">~$</span></span>
+            <nav class="nav">
+                <a href="#about">about</a>
+                <a href="#contact">contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero wrap">
+            <h1>Hi, I'm Ron.</h1>
+            <p class="lede">
+                I'm a Backend developer. I also like
+                reverse engineering and tinkering with encryption and code just to
+                see how it holds up.
+            </p>
+            <div class="cta-row">
+                <a class="btn btn-primary" href="#about">about me</a>
+                <a class="btn btn-ghost" href="#contact">get in touch</a>
+            </div>
+        </section>
+
+        <section id="about" class="section wrap">
+            <h2><span class="tag">01</span>about</h2>
+            <div class="about-grid">
+                <p>
+                    I started with Scratch around age 10-11, moved to HTML/CSS/JS at 12,
+                    and later taught myself Node.js, Python, and C# on my own. I picked
+                    up C in school, and that's also around when I got into reverse
+                    engineering and tinkering with encryption as a hobby.
+                </p>
+                <p>
+                    I'm currently studying Electronics and Computer Engineering,
+                    and I've built a few projects with the ESP32 along the way. I'm also
+                    into homelabbing, so I work a fair bit with Docker and Linux.
+                    Most of what I know I've picked up by teaching myself.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="section wrap">
+            <h2><span class="tag">02</span>contact</h2>
+            <p class="contact-lede">Best way to reach me is email.</p>
+            <a class="btn btn-primary btn-large" id="mail-btn" href="#">
+                <span id="mail-text">contact@ron.localplayer.dev</span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="wrap">
+        <p>&copy; <span id="year"></span> Ron.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
