@@ -3,105 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ron</title>
-<meta name="description" content="Ron — backend dev, reverse engineering, encryption tinkering.">
-<meta name="theme-color" content="#0a0a0a">
+<title>ron — back-end dev</title>
+<meta name="description" content="I'm a back-end developer who likes Linux, self-hosting, networking, reverse engineering and electronics.">
+<meta name="author" content="Ron">
+<meta name="theme-color" content="#0e1013">
+<script>document.documentElement.className+=" js"</script>
+<link rel="canonical" href="https://ron.is-a.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="ron — back-end dev">
+<meta property="og:description" content="I'm a back-end developer who likes Linux, self-hosting, networking, reverse engineering and electronics.">
+<meta property="og:url" content="https://ron.is-a.dev/">
+<meta name="twitter:card" content="summary">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22%23E95420%22/></svg>">
-<style>
-  :root {
-    --bg: #0a0a0a;
-    --fg: #ededed;
-    --muted: #888;
-    --accent: #E95420;
-  }
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=JetBrains+Mono:wght@400;500&family=Hanken+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230e1013%22/><circle cx=%2250%22 cy=%2250%22 r=%2222%22 fill=%22%23ff6b35%22/></svg>">
+<link rel="stylesheet" href="style.css">
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html, body {
-    height: 100%;
-  }
-
-  body {
-    background: var(--bg);
-    color: var(--fg);
-    font-family: 'Ubuntu Mono', monospace;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-  }
-
-  main {
-    max-width: 480px;
-    width: 100%;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 8vw, 2.75rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-
-  h1 .dot { color: var(--accent); }
-
-  p.tagline {
-    margin-top: 14px;
-    color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .links {
-    margin-top: 36px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .links a {
-    color: var(--fg);
-    text-decoration: none;
-    border: 1px solid #2a2a2a;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: border-color 0.15s ease, color 0.15s ease;
-  }
-
-  .links a:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  footer {
-    margin-top: 48px;
-    color: #444;
-    font-size: 0.75rem;
-  }
-
-  @media (max-width: 420px) {
-    .links a { font-size: 0.85rem; padding: 7px 14px; }
-  }
-</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Ron","url":"https://ron.is-a.dev/","sameAs":["https://github.com/itsrn"],"jobTitle":"Back-end developer"}
+</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
-  <main>
-    <h1>ron<span class="dot">.</span></h1>
-    <p class="tagline">backend dev. reverse engineering &amp; encryption on the side.</p>
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="brand" href="#top" aria-label="ron, back to top"><span class="brand-dot" aria-hidden="true"></span>ron<span class="brand-sub">@is-a.dev</span></a>
+    <nav aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#projects">projects</a>
+      <a href="#interests">interests</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
 
-    <div class="links">
-      <a href="mailto:contact@ron.localplayer.dev">email</a>
-      <a href="https://github.com/itsrn" target="_blank" rel="noopener">github</a>
+<main id="main">
+  <section class="hero wrap" id="top">
+    <div class="hex" aria-hidden="true" id="hex"></div>
+    <h1>Ron<span class="period">.</span></h1>
+    <p class="lede reveal">Back-end developer based in Israel. I like figuring out how things work underneath — from the Linux box in the corner to the bytes on the wire.</p>
+    <div class="cta reveal">
+      <a class="btn btn-primary" href="#projects">See my projects</a>
+    </div>
+    <p class="status reveal"><span class="status-dot" aria-hidden="true"></span>Working from home &amp; studying.</p>
+  </section>
+
+  <section class="block wrap" id="about" aria-labelledby="about-h">
+    <h2 id="about-h" class="label">about</h2>
+    <div class="about">
+      <p>I write back-end code, mostly in Python and TypeScript, and I'm happiest when the work involves a terminal. Outside of what I build, I spend time poking at things: self-hosting services, reading how protocols behave, and taking binaries apart to see what they do.</p>
+    </div>
+  </section>
+
+  <section class="block wrap" id="projects" aria-labelledby="projects-h">
+    <h2 id="projects-h" class="label">projects</h2>
+
+    <div class="cards">
+      <article class="card">
+        <header>
+          <h3>un-did-li</h3>
+          <span class="meta">TypeScript · MIT license</span>
+        </header>
+        <p>Reveals the full destination behind a <code>did.li</code> short link so you can check where it goes before you click. It has a small web UI and a plain GET endpoint that returns the URL as JSON.</p>
+        <ul class="stack" aria-label="Technologies">
+          <li>Next.js</li><li>TypeScript</li><li>Tailwind CSS</li><li>Bun</li><li>Vercel</li>
+        </ul>
+        <footer>
+          <a href="https://github.com/itsrn/un-did-li" target="_blank" rel="noopener">source<span class="sr"> for un-did-li</span><svg class="ar" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="https://un-did-li.vercel.app" target="_blank" rel="noopener">try it<span class="sr"> (un-did-li, opens the live site)</span><svg class="ar" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </footer>
+      </article>
+
+      <article class="card">
+        <header>
+          <h3>website</h3>
+          <span class="meta">HTML · CSS · JS</span>
+        </header>
+        <p>This site. Plain static files with no framework or build step, deployed to GitHub Pages by a workflow on every push to <code>main</code> and served at <code>ron.is-a.dev</code>.</p>
+        <footer>
+          <a href="https://github.com/itsrn/website" target="_blank" rel="noopener">source<span class="sr"> for website</span><svg class="ar" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </footer>
+      </article>
     </div>
 
-    <footer>&copy; 2026 ron</footer>
-  </main>
+    <p class="aside">The rest is on <a href="https://github.com/itsrn?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
 
+  <section class="block wrap" id="interests" aria-labelledby="interests-h">
+    <h2 id="interests-h" class="label">interests</h2>
+
+    <ul class="grid">
+      <li>
+        <h3>Back-end &amp; tooling</h3>
+        <p>Python, TypeScript, small APIs, and scripts that automate something annoying.</p>
+      </li>
+      <li>
+        <h3>Linux, networking &amp; self-hosting</h3>
+        <p>Running my own services, building a homelab.</p>
+      </li>
+      <li>
+        <h3>Reverse engineering &amp; encryption</h3>
+        <p>Binary analysis, CTF challenges, and how cryptographic pieces fit together.</p>
+      </li>
+      <li>
+        <h3>Electronics</h3>
+        <p>Digital logic and embedded systems, where software meets the physical world.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="block wrap contact" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h" class="label">contact</h2>
+    <p class="contact-lede">Want to talk about a project, a CTF, or a weird bug? Email is best.</p>
+    <div class="mail">
+      <div class="mail-group">
+        <a id="mail-link" class="btn btn-primary" href="#contact"><span id="mail-text">email me</span></a>
+        <button id="copy-btn" class="btn btn-copy" type="button" hidden>copy</button>
+      </div>
+      <span id="copy-status" class="sr" role="status" aria-live="polite"></span>
+    </div>
+    <p class="elsewhere">Or find my code on <a href="https://github.com/itsrn" target="_blank" rel="noopener">GitHub<svg class="ar" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>.</p>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>&copy; <span id="year">2026</span> ron</span>
+  </div>
+</footer>
+
+<script src="script.js" defer></script>
 </body>
 </html>
